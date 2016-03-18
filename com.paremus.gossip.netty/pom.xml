@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.paremus.cluster</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.1.0</version>
+        <relativePath>../parent</relativePath>
+    </parent>
+
+    <groupId>com.paremus.gossip</groupId>
+    <artifactId>com.paremus.gossip.netty</artifactId>
+    
+    <name>The Paremus Gossip Clustering (Netty) Implementation</name>
+    <description>
+        An implementation of the Paremus Clustering API using a Gossip style
+        infection algorithm and Netty as a communications layer
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.cmpn</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.annotation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.paremus.core</groupId>
+            <artifactId>com.paremus.license</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.paremus.core</groupId>
+            <artifactId>com.paremus.netty.tls</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.paremus.cluster</groupId>
+            <artifactId>com.paremus.cluster.api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bnd-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

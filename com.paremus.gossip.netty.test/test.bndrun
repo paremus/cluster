@@ -1,0 +1,40 @@
+-standalone: target/index.xml
+
+-resolve.effective: active
+-runrequires:  \
+    osgi.identity;filter:="(osgi.identity=com.paremus.gossip.netty.test)"
+
+-runbundles: \
+	ch.qos.logback.classic;version='[1.2.3,1.2.4)',\
+	ch.qos.logback.core;version='[1.2.3,1.2.4)',\
+	com.paremus.cluster.api;version='[1.1.0,1.1.1)',\
+	org.apache.servicemix.bundles.junit;version='[4.12.0,4.12.1)',\
+	org.osgi.util.function;version='[1.1.0,1.1.1)',\
+	slf4j.api;version='[1.7.25,1.7.26)',\
+	bcprov;version='[1.64.0,1.64.1)',\
+	bctls;version='[1.64.0,1.64.1)',\
+	com.paremus.gossip.netty;version='[1.1.0,1.1.1)',\
+	com.paremus.gossip.netty.test;version='[1.1.0,1.1.1)',\
+	com.paremus.netty.tls;version='[1.1.0,1.1.1)',\
+	io.netty.buffer;version='[4.1.43,4.1.44)',\
+	io.netty.codec;version='[4.1.43,4.1.44)',\
+	io.netty.common;version='[4.1.43,4.1.44)',\
+	io.netty.handler;version='[4.1.43,4.1.44)',\
+	io.netty.resolver;version='[4.1.43,4.1.44)',\
+	io.netty.transport;version='[4.1.43,4.1.44)',\
+	org.apache.felix.configadmin;version='[1.9.16,1.9.17)',\
+	org.apache.felix.scr;version='[2.1.16,2.1.17)',\
+	org.osgi.util.promise;version='[1.1.0,1.1.1)',\
+	com.paremus.license;version='[1.1.0,1.1.1)'
+
+-runee: JavaSE-1.8
+-runfw: org.apache.felix.framework
+-runsystempackages:  \
+	sun.reflect
+-runvm: -ea,\
+ -Dorg.slf4j.simpleLogger.defaultLogLevel=debug,\
+ -Dlogback.configurationFile=${.}/src/test/resources/logback/logback-test.xml
+ 
+-runproperties: \
+    posh.home=${.}/src/test/resources/,\
+    test.resources=${.}/src/test/resources/

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.paremus.build</groupId>
+        <artifactId>product-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.paremus.cluster</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.1.0</version>
+    <packaging>pom</packaging>
+    
+    <description>The common parent pom for the Paremus Cluster components</description>
+    <url>https://github.com/paremus/cluster</url>
+    
+    <scm>
+        <connection>scm:git:https://github.com/paremus/cluster.git</connection>
+        <developerConnection>scm:git:https://github.com/paremus/cluster.git</developerConnection>
+        <url>https://github.com/paremus/cluster</url>
+    </scm>
+    
+    <properties>
+        <core.version>1.1.0</core.version>
+        <build.version>1.0.0</build.version>
+    </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.paremus.core</groupId>
+                <artifactId>com.paremus.license</artifactId>
+                <version>${core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.paremus.core</groupId>
+                <artifactId>com.paremus.net</artifactId>
+                <version>${core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.paremus.core</groupId>
+                <artifactId>com.paremus.netty.tls</artifactId>
+                <version>${core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.paremus.build</groupId>
+                <artifactId>bundle-testing-dependencies</artifactId>
+                <version>${build.version}</version>
+                <scope>runtime</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
